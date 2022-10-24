@@ -3,11 +3,11 @@
     </style>
 
     <style name="Theme.LedsControl.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
-        <item name="appWidgetRadius">16dp</item>
-        <item name="appWidgetInnerRadius">8dp</item>
+        <item name="appWidgetRadius">0dp</item>
+        <item name="appWidgetInnerRadius">0dp</item>
     </style>
 
     <style name="Theme.LedsControl.AppWidgetContainer" parent="Theme.LedsControl.AppWidgetContainerParent">
-        <item name="appWidgetPadding">16dp</item>
+        <item name="appWidgetPadding">32dp</item>
     </style>
 </resources>

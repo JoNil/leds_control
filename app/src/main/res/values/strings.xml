@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Leds Control</string>
-    <string name="appwidget_text">Test</string>
     <string name="add_widget">Contol Leds</string>
     <string name="app_widget_description">Contol Leds</string>
     <string name="on_button">On</string>
+    <string name="off_button">Off</string>
+    <string name="red_button">Red</string>
 </resources>

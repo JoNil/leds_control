@@ -1,13 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.LedsControl" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.LedsControl" parent="@android:style/Theme.DeviceDefault">
     </style>
 
-    <style name="Theme.LedsControl.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
-        <item name="appWidgetRadius">0dp</item>
-        <item name="appWidgetInnerRadius">0dp</item>
-    </style>
-
-    <style name="Theme.LedsControl.AppWidgetContainer" parent="Theme.LedsControl.AppWidgetContainerParent">
-        <item name="appWidgetPadding">32dp</item>
-    </style>
 </resources>

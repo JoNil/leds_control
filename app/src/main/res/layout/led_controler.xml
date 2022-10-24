@@ -1,39 +1,30 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/Widget.LedsControl.AppWidget.Container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:theme="@style/Theme.LedsControl.AppWidgetContainer">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <Button
+            style="@style/button_style"
             android:id="@+id/on_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/on_button" />
 
         <Button
+            style="@style/button_style"
             android:id="@+id/off_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/off_button" />
 
         <Button
+            style="@style/button_style"
             android:id="@+id/red_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/red_button" />
         <Button
+            style="@style/button_style"
             android:id="@+id/red_button2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="@string/red_button" />
     </LinearLayout>
 </RelativeLayout>

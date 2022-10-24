@@ -11,22 +11,22 @@
 
         <Button
             android:id="@+id/on_button"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/on_button" />
 
         <Button
             android:id="@+id/off_button"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/off_button" />
 
         <Button
             android:id="@+id/red_button"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/red_button" />
     </LinearLayout>

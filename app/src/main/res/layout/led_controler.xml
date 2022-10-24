@@ -22,7 +22,7 @@
             android:text="@string/red_button" />
         <Button
             style="@style/button_style"
-            android:id="@+id/red_button2"
-            android:text="@string/red_button" />
+            android:id="@+id/other"
+            android:text="5" />
     </LinearLayout>
 </RelativeLayout>

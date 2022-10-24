@@ -1,28 +1,23 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="16dp" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:padding="16dp" >
-
-        <Button
-            style="@style/button_style"
-            android:id="@+id/on_button"
-            android:text="@string/on_button" />
-        <Button
-            style="@style/button_style"
-            android:id="@+id/off_button"
-            android:text="@string/off_button" />
-        <Button
-            style="@style/button_style"
-            android:id="@+id/red_button"
-            android:text="@string/red_button" />
-        <Button
-            style="@style/button_style"
-            android:id="@+id/other"
-            android:text="5" />
-    </LinearLayout>
-</RelativeLayout>
+    <Button
+        style="@style/button_style"
+        android:id="@+id/on_button"
+        android:text="@string/on_button" />
+    <Button
+        style="@style/button_style"
+        android:id="@+id/off_button"
+        android:text="@string/off_button" />
+    <Button
+        style="@style/button_style"
+        android:id="@+id/red_button"
+        android:text="@string/red_button" />
+    <Button
+        style="@style/button_style"
+        android:id="@+id/other"
+        android:text="6" />
+</LinearLayout>

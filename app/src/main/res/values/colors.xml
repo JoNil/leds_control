@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="card">#2D2D2D</color>
+    <color name="card">#1D1D1D</color>
+    <color name="card_focus">#2D2D2D</color>
     <color name="text">#EAEAEA</color>
 </resources>

@@ -35,9 +35,6 @@ class LedControler : AppWidgetProvider() {
         return PendingIntent.getBroadcast(context, 0, intent, 0)
     }
 
-    override fun onEnabled(context: Context) {}
-    override fun onDisabled(context: Context) {}
-
     override fun onReceive(context: Context?, intent: Intent?) {
         super.onReceive(context, intent)
         Log.d(tag, intent!!.action!!)

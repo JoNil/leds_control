@@ -19,5 +19,5 @@
     <Button
         style="@style/button_style"
         android:id="@+id/other"
-        android:text="6" />
+        android:text="7" />
 </LinearLayout>

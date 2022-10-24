@@ -52,7 +52,6 @@ class LedControler : AppWidgetProvider() {
 
         when (intent.action!!) {
             "ON" -> {
-                Log.d(tag, "On!")
                 sendRequest()
             }
             "Off" -> Log.d(tag, "Off!")
@@ -62,9 +61,7 @@ class LedControler : AppWidgetProvider() {
 
     private fun sendRequest() {
         leds.getSettings() {
-            it?.let {
-                Log.w(tag, String.format("On %d", it.on))
-            }
+            Log.w(tag, it.toString())
         }
     }
 }
@@ -73,7 +70,7 @@ object ServiceBuilder {
     private val client = OkHttpClient.Builder().build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("http://leds.local")
+        .baseUrl("http://192.168.0.6")
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()
@@ -87,7 +84,7 @@ data class LedSettings (
     @SerializedName("calibration") val calibration: Int?,
     @SerializedName("global_brightness") val globalBrightness: Int?,
     @SerializedName("global_brightness_limit") val globalBrightnessLimit: Float?,
-    @SerializedName("on") val on: Float?,
+    @SerializedName("on") val on: Int?,
 )
 
 interface LedControlApi {
@@ -97,16 +94,21 @@ interface LedControlApi {
 }
 
 class LedControlService {
-    fun getSettings(onResult: (LedSettings?) -> Unit) {
+
+    var tag = "main"
+
+    fun getSettings(onResult: (LedSettings) -> Unit) {
         val retrofit = ServiceBuilder.buildService(LedControlApi::class.java)
         retrofit.getSettings().enqueue(
             object : Callback<LedSettings> {
                 override fun onFailure(call: Call<LedSettings>, t: Throwable) {
-                    onResult(null)
+                    Log.e(tag, t.toString())
                 }
                 override fun onResponse(call: Call<LedSettings>, response: Response<LedSettings>) {
                     val settings = response.body()
-                    onResult(settings)
+                    settings?.let {
+                        onResult(it)
+                    }
                 }
             }
         )

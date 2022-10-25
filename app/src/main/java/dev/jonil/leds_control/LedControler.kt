@@ -83,7 +83,7 @@ object ServiceBuilder {
 data class Group (
     @SerializedName("brightness") val brightness: Float?,
     @SerializedName("color_temp") val colorTemp: Int?,
-    @SerializedName("function") val function: Int?,
+    @SerializedName("function") val function: Long?,
     @SerializedName("mapping") val mapping: Array<Int>?,
     @SerializedName("name") val name: String?,
     @SerializedName("palette") val palette: Int?,

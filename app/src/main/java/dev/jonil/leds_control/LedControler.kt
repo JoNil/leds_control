@@ -56,14 +56,24 @@ class LedControler : AppWidgetProvider() {
             "ON" -> {
                 leds.getSettings() {
                     Log.w(tag, it.toString())
-                    var settings = it
-                    settings.on = 1
-                    settings.globalBrightness = 1.0.toFloat()
-                    settings.groups!!["main"]!!.brightness = 1.0.toFloat()
+
+                    it.on = 1
+                    it.globalBrightness = 1.0.toFloat()
+                    it.groups!!["main"]!!.brightness = 1.0.toFloat()
+
+                    leds.updateSettings(it)
                 }
             }
             "Off" -> {
+                leds.getSettings() {
+                    Log.w(tag, it.toString())
 
+                    it.on = 0
+                    it.globalBrightness = 1.0.toFloat()
+                    it.groups!!["main"]!!.brightness = 1.0.toFloat()
+
+                    leds.updateSettings(it)
+                }
             }
             "RED" -> {
 
@@ -149,16 +159,14 @@ class LedControlService {
         )
     }
 
-    fun updateSettings(settings: LedSettings, onResult: () -> Unit) {
+    fun updateSettings(settings: LedSettings) {
         val retrofit = ServiceBuilder.buildService(LedControlApi::class.java)
         retrofit.updateSettings(settings).enqueue(
             object : Callback<Unit> {
                 override fun onFailure(call: Call<Unit>, t: Throwable) {
                     Log.e(tag, t.toString())
                 }
-                override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                    onResult()
-                }
+                override fun onResponse(call: Call<Unit>, response: Response<Unit>) {}
             }
         )
     }

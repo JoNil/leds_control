@@ -68,9 +68,9 @@ class LedControler : AppWidgetProvider() {
                 leds.getSettings() {
                     Log.w(tag, it.toString())
 
-                    it.on = 0
-                    it.globalBrightness = 1.0.toFloat()
-                    it.groups!!["main"]!!.brightness = 1.0.toFloat()
+                    it.on = 1
+                    it.globalBrightness = 0.0.toFloat()
+                    it.groups!!["main"]!!.brightness = 0.0.toFloat()
 
                     leds.updateSettings(it)
                 }
@@ -98,34 +98,34 @@ object ServiceBuilder {
 
 data class Group (
     @SerializedName("brightness") var brightness: Float?,
-    @SerializedName("color_temp") var colorTemp: Int?,
-    @SerializedName("function") var function: Long?,
-    @SerializedName("mapping") var mapping: Array<Int>?,
-    @SerializedName("name") var name: String?,
-    @SerializedName("palette") var palette: Int?,
-    @SerializedName("range_end") var range_end: Float?,
-    @SerializedName("range_start") var range_start: Float?,
+//    @SerializedName("color_temp") var colorTemp: Int?,
+//    @SerializedName("function") var function: Long?,
+//    @SerializedName("mapping") var mapping: Array<Int>?,
+//    @SerializedName("name") var name: String?,
+//    @SerializedName("palette") var palette: Int?,
+//    @SerializedName("range_end") var range_end: Float?,
+//    @SerializedName("range_start") var range_start: Float?,
     @SerializedName("saturation") var saturation: Float?,
     @SerializedName("scale") var scale: Float?,
     @SerializedName("speed") var speed: Float?,
 )
 
 data class LedSettings (
-    @SerializedName("calibration") var calibration: Int?,
+//    @SerializedName("calibration") var calibration: Int?,
     @SerializedName("global_brightness") var globalBrightness: Float?,
-    @SerializedName("global_brightness_limit") var globalBrightnessLimit: Float?,
+//    @SerializedName("global_brightness_limit") var globalBrightnessLimit: Float?,
 
-    @SerializedName("global_color_b") var globalColorB: Int?,
-    @SerializedName("global_color_g") var globalColorG: Int?,
-    @SerializedName("global_color_r") var globalColorR: Int?,
+//    @SerializedName("global_color_b") var globalColorB: Int?,
+//    @SerializedName("global_color_g") var globalColorG: Int?,
+//    @SerializedName("global_color_r") var globalColorR: Int?,
 
-    @SerializedName("global_color_temp") var globalColorTemp: Int?,
-    @SerializedName("global_saturation") var globalSaturation: Float?,
+//    @SerializedName("global_color_temp") var globalColorTemp: Int?,
+//    @SerializedName("global_saturation") var globalSaturation: Float?,
 
     @SerializedName("groups") var groups: HashMap<String, Group>?,
 
     @SerializedName("on") var on: Int?,
-    @SerializedName("sacn") var sacn: Int?,
+//    @SerializedName("sacn") var sacn: Int?,
 )
 
 interface LedControlApi {

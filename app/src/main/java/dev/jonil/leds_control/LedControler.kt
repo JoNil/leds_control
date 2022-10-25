@@ -92,7 +92,7 @@ data class Group (
     @SerializedName("saturation") val saturation: Float?,
     @SerializedName("scale") val scale: Float?,
     @SerializedName("speed") val speed: Float?,
-}
+)
 
 data class LedSettings (
     @SerializedName("calibration") val calibration: Int?,

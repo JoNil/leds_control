@@ -80,11 +80,36 @@ object ServiceBuilder {
     }
 }
 
+data class Group (
+    @SerializedName("brightness") val brightness: Float?,
+    @SerializedName("color_temp") val colorTemp: Int?,
+    @SerializedName("function") val function: Int?,
+    @SerializedName("mapping") val mapping: Array<Int>?,
+    @SerializedName("name") val name: String?,
+    @SerializedName("palette") val palette: Int?,
+    @SerializedName("range_end") val range_end: Float?,
+    @SerializedName("range_start") val range_start: Float?,
+    @SerializedName("saturation") val saturation: Float?,
+    @SerializedName("scale") val scale: Float?,
+    @SerializedName("speed") val speed: Float?,
+}
+
 data class LedSettings (
     @SerializedName("calibration") val calibration: Int?,
     @SerializedName("global_brightness") val globalBrightness: Int?,
     @SerializedName("global_brightness_limit") val globalBrightnessLimit: Float?,
+
+    @SerializedName("global_color_b") val globalColorB: Int?,
+    @SerializedName("global_color_g") val globalColorG: Int?,
+    @SerializedName("global_color_r") val globalColorR: Int?,
+
+    @SerializedName("global_color_temp") val globalColorTemp: Int?,
+    @SerializedName("global_saturation") val globalSaturation: Float?,
+
+    @SerializedName("groups") val groups: HashMap<String, Group>?,
+
     @SerializedName("on") val on: Int?,
+    @SerializedName("sacn") val sacn: Int?,
 )
 
 interface LedControlApi {

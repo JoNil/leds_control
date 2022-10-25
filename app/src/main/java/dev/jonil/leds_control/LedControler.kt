@@ -58,7 +58,8 @@ class LedControler : AppWidgetProvider() {
                     Log.w(tag, it.toString())
                     var settings = it
                     settings.on = 1
-
+                    settings.globalBrightness = 1.0.toFloat()
+                    settings.groups!!["main"]!!.brightness = 1.0.toFloat()
                 }
             }
             "Off" -> {
@@ -86,35 +87,35 @@ object ServiceBuilder {
 }
 
 data class Group (
-    @SerializedName("brightness") val brightness: Float?,
-    @SerializedName("color_temp") val colorTemp: Int?,
-    @SerializedName("function") val function: Long?,
-    @SerializedName("mapping") val mapping: Array<Int>?,
-    @SerializedName("name") val name: String?,
-    @SerializedName("palette") val palette: Int?,
-    @SerializedName("range_end") val range_end: Float?,
-    @SerializedName("range_start") val range_start: Float?,
-    @SerializedName("saturation") val saturation: Float?,
-    @SerializedName("scale") val scale: Float?,
-    @SerializedName("speed") val speed: Float?,
+    @SerializedName("brightness") var brightness: Float?,
+    @SerializedName("color_temp") var colorTemp: Int?,
+    @SerializedName("function") var function: Long?,
+    @SerializedName("mapping") var mapping: Array<Int>?,
+    @SerializedName("name") var name: String?,
+    @SerializedName("palette") var palette: Int?,
+    @SerializedName("range_end") var range_end: Float?,
+    @SerializedName("range_start") var range_start: Float?,
+    @SerializedName("saturation") var saturation: Float?,
+    @SerializedName("scale") var scale: Float?,
+    @SerializedName("speed") var speed: Float?,
 )
 
 data class LedSettings (
-    @SerializedName("calibration") val calibration: Int?,
-    @SerializedName("global_brightness") val globalBrightness: Int?,
-    @SerializedName("global_brightness_limit") val globalBrightnessLimit: Float?,
+    @SerializedName("calibration") var calibration: Int?,
+    @SerializedName("global_brightness") var globalBrightness: Float?,
+    @SerializedName("global_brightness_limit") var globalBrightnessLimit: Float?,
 
-    @SerializedName("global_color_b") val globalColorB: Int?,
-    @SerializedName("global_color_g") val globalColorG: Int?,
-    @SerializedName("global_color_r") val globalColorR: Int?,
+    @SerializedName("global_color_b") var globalColorB: Int?,
+    @SerializedName("global_color_g") var globalColorG: Int?,
+    @SerializedName("global_color_r") var globalColorR: Int?,
 
-    @SerializedName("global_color_temp") val globalColorTemp: Int?,
-    @SerializedName("global_saturation") val globalSaturation: Float?,
+    @SerializedName("global_color_temp") var globalColorTemp: Int?,
+    @SerializedName("global_saturation") var globalSaturation: Float?,
 
-    @SerializedName("groups") val groups: HashMap<String, Group>?,
+    @SerializedName("groups") var groups: HashMap<String, Group>?,
 
-    @SerializedName("on") val on: Int?,
-    @SerializedName("sacn") val sacn: Int?,
+    @SerializedName("on") var on: Int?,
+    @SerializedName("sacn") var sacn: Int?,
 )
 
 interface LedControlApi {

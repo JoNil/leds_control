@@ -64,13 +64,13 @@ class LedControler : AppWidgetProvider() {
                     leds.updateSettings(it)
                 }
             }
-            "Off" -> {
+            "OFF" -> {
                 leds.getSettings() {
                     Log.w(tag, it.toString())
 
-                    it.on = 1
+                    it.on = 0
                     it.globalBrightness = 0.0.toFloat()
-                    it.groups!!["main"]!!.brightness = 0.0.toFloat()
+                    it.groups!!["main"]!!.brightness = 1.0.toFloat()
 
                     leds.updateSettings(it)
                 }

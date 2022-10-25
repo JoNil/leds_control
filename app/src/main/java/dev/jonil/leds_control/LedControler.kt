@@ -16,6 +16,8 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.http.Headers
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Body
 
 class LedControler : AppWidgetProvider() {
 
@@ -52,16 +54,19 @@ class LedControler : AppWidgetProvider() {
 
         when (intent.action!!) {
             "ON" -> {
-                sendRequest()
-            }
-            "Off" -> Log.d(tag, "Off!")
-            "RED" -> Log.d(tag, "Red!")
-        }
-    }
+                leds.getSettings() {
+                    Log.w(tag, it.toString())
+                    var settings = it
+                    settings.on = 1
 
-    private fun sendRequest() {
-        leds.getSettings() {
-            Log.w(tag, it.toString())
+                }
+            }
+            "Off" -> {
+
+            }
+            "RED" -> {
+
+            }
         }
     }
 }
@@ -116,6 +121,10 @@ interface LedControlApi {
     @Headers("Content-Type: application/json")
     @GET("getsettings")
     fun getSettings(): Call<LedSettings>
+
+    @Headers("Content-Type: application/json")
+    @POST("updatesettings")
+    fun updateSettings(@Body settings: LedSettings): Call<Unit>
 }
 
 class LedControlService {
@@ -134,6 +143,20 @@ class LedControlService {
                     settings?.let {
                         onResult(it)
                     }
+                }
+            }
+        )
+    }
+
+    fun updateSettings(settings: LedSettings, onResult: () -> Unit) {
+        val retrofit = ServiceBuilder.buildService(LedControlApi::class.java)
+        retrofit.updateSettings(settings).enqueue(
+            object : Callback<Unit> {
+                override fun onFailure(call: Call<Unit>, t: Throwable) {
+                    Log.e(tag, t.toString())
+                }
+                override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                    onResult()
                 }
             }
         )

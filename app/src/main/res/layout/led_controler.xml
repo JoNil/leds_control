@@ -1,23 +1,56 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:padding="16dp" >
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <Button
-        style="@style/button_style"
-        android:id="@+id/on_button"
-        android:text="@string/on_button" />
-    <Button
-        style="@style/button_style"
-        android:id="@+id/off_button"
-        android:text="@string/off_button" />
-    <Button
-        style="@style/button_style"
-        android:id="@+id/red_button"
-        android:text="@string/red_button" />
-    <Button
-        style="@style/button_style"
-        android:id="@+id/other"
-        android:text="27" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/on_button"
+            style="@style/button_style"
+            android:text="@string/on_button" />
+
+        <Button
+            android:id="@+id/off_button"
+            style="@style/button_style"
+            android:text="@string/off_button" />
+
+        <Button
+            android:id="@+id/red_button"
+            style="@style/button_style"
+            android:text="@string/red_button" />
+
+        <Button
+            android:id="@+id/other"
+            style="@style/button_style"
+            android:text="29" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/other2"
+            style="@style/button_style2"
+            android:text="29" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="10"
+            android:progress="3" />
+
+
+    </LinearLayout>
+
 </LinearLayout>

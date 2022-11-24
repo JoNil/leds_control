@@ -5,4 +5,13 @@
     <string name="on_button">On</string>
     <string name="off_button">Off</string>
     <string name="red_button">Red</string>
+    <string name="is_button">Is</string>
+    <string name="grad_button">Grad</string>
+    <string name="sw_button">SW</string>
+    <string name="i10_button">10</string>
+    <string name="i20_button">20</string>
+    <string name="i30_button">30</string>
+    <string name="i50_button">50</string>
+    <string name="i75_button">75</string>
+    <string name="i100_button">100</string>
 </resources>

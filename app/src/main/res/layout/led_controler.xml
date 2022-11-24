@@ -25,9 +25,19 @@
             android:text="@string/red_button" />
 
         <Button
-            android:id="@+id/other"
+            android:id="@+id/is_button"
             style="@style/button_style"
-            android:text="29" />
+            android:text="@string/is_button" />
+
+        <Button
+            android:id="@+id/grad_button"
+            style="@style/button_style"
+            android:text="@string/grad_button" />
+
+        <Button
+            android:id="@+id/sw_button"
+            style="@style/button_style"
+            android:text="@string/sw_button" />
 
     </LinearLayout>
 
@@ -37,15 +47,34 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/other2"
-            style="@style/button_style2"
-            android:text="31" />
+            android:id="@+id/i10_button"
+            style="@style/button_style"
+            android:text="@string/i10_button" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="128dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/i20_button"
+            style="@style/button_style"
+            android:text="@string/i20_button" />
+
+        <Button
+            android:id="@+id/i30_button"
+            style="@style/button_style"
+            android:text="@string/i30_button" />
+
+        <Button
+            android:id="@+id/i50_button"
+            style="@style/button_style"
+            android:text="@string/i50_button" />
+
+        <Button
+            android:id="@+id/i75_button"
+            style="@style/button_style"
+            android:text="@string/i75_button" />
+
+        <Button
+            android:id="@+id/i100_button"
+            style="@style/button_style"
+            android:text="@string/i100_button" />
 
 
     </LinearLayout>
